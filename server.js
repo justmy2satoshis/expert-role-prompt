@@ -476,6 +476,10 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     }
   ]
 }));
+
+// Protocol handlers are handled by the MCP SDK automatically
+// No additional handler registration needed for prompts/list or resources/list
+
 // Tool execution handler
 server.setRequestHandler(CallToolRequestSchema, async (request) => {
   const { name, arguments: args } = request.params;
